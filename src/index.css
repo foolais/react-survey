@@ -10,3 +10,16 @@
   --primary-color: #3aa6b9;
   --primary-hover: #3aa6b9ce;
 }
+
+.hidden-content {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3aa6b9;
+  border-radius: 10px;
+}

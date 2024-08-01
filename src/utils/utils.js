@@ -13,3 +13,20 @@ export const warningDialog = (message, callback = () => {}) => {
     }
   });
 };
+
+export const showConfirmationDialog = (message, callback) => {
+  Swal.fire({
+    icon: "warning",
+    title: "Warning",
+    text: message,
+    showCancelButton: true,
+    allowOutsideClick: false,
+    confirmButtonColor: "#3aa6b9",
+    cancelButtonColor: "#d33",
+    reverseButtons: true,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      callback(true);
+    }
+  });
+};
