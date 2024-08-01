@@ -9,7 +9,6 @@ const initialState = {
   isOngoingSurvey: initialData?.isOngoingSurvey || false,
   currentQuestion: initialData?.currentQuestion || 0,
   surveyAnswers: initialData?.surveyAnswers || [],
-  timer: initialData?.timer || 10,
 };
 
 const setLocalStorageTimer = () => {

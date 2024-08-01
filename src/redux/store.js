@@ -9,8 +9,4 @@ const store = configureStore({
     getDefaultMiddleware().concat(saveStateMiddleware),
 });
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
-
 export default store;
