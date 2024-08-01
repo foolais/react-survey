@@ -9,10 +9,3 @@ export const questions = [
     ],
   },
 ];
-
-export const data = {
-  isFinishedSurvey: false,
-  currentQuestion: 0,
-  answers: [0],
-  timer: 10,
-};

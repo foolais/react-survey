@@ -1,10 +1,16 @@
-import { CircleHelp } from "lucide-react";
+import { CircleHelp, Clock10 } from "lucide-react";
 import { Button } from "../../components/fragments";
 import { ContainerLayout } from "../../components/layouts";
 import styles from "../styles/HomePages.module.css";
-import { Clock10 } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { onStartSurvey } from "../../redux/slice/formSlice";
 
 const HomePages = () => {
+  const dispatch = useDispatch();
+  const handleStartSurvey = () => {
+    dispatch(onStartSurvey());
+  };
+
   return (
     <ContainerLayout>
       <div className={styles.container}>
@@ -20,7 +26,9 @@ const HomePages = () => {
             <Clock10 size={25} />
           </div>
         </div>
-        <Button className={styles.btn}>Start</Button>
+        <Button onClick={handleStartSurvey} className={styles.btn}>
+          Start
+        </Button>
       </div>
     </ContainerLayout>
   );
