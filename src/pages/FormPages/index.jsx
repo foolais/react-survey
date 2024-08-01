@@ -1,5 +1,7 @@
+import { ContainerLayout } from "../../components/layouts";
+
 const FormPages = () => {
-  return <div>FormPages</div>;
+  return <ContainerLayout>FormPages</ContainerLayout>;
 };
 
 export default FormPages;

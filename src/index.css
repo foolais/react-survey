@@ -5,3 +5,7 @@
   list-style: none;
   text-decoration: none;
 }
+
+:root {
+  --primary-color: #3aa6b9;
+}

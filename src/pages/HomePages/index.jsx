@@ -1,5 +1,7 @@
+import { ContainerLayout } from "../../components/layouts";
+
 const HomePages = () => {
-  return <div>HomePages</div>;
+  return <ContainerLayout>HomePage</ContainerLayout>;
 };
 
 export default HomePages;

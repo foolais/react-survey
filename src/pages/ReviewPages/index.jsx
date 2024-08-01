@@ -1,5 +1,7 @@
+import { ContainerLayout } from "../../components/layouts";
+
 const ReviewPages = () => {
-  return <div>ReviewPages</div>;
+  return <ContainerLayout>ReviewPages</ContainerLayout>;
 };
 
 export default ReviewPages;
