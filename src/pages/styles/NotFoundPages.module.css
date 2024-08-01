@@ -1,0 +1,27 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container h1 {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+.container h2 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.container .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  color: inherit;
+}
