@@ -1,0 +1,110 @@
+.container {
+  width: 100%;
+  padding: 40px 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container .header div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.content h2 {
+  font-weight: 800 !important;
+  max-width: 80%;
+}
+
+.content .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 15px 0;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.answers label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radioButton {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.customRadio input[type="radio"]:checked + .radioButton {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.radioText {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+  .container .header {
+    font-size: 1.1rem;
+  }
+  .content h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 100%;
+  }
+  .content .info {
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  .radioText {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}

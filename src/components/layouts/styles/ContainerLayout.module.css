@@ -11,7 +11,7 @@
 .container {
   background: white;
   color: black;
-  padding: 20px;
+  padding: 40px;
   width: 100%;
   max-width: 900px;
   height: 95vh;
@@ -28,5 +28,6 @@
   }
   .container {
     height: 100vh;
+    padding: 20px;
   }
 }

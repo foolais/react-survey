@@ -4,11 +4,19 @@ import { ContainerLayout } from "../../components/layouts";
 import styles from "../styles/HomePages.module.css";
 import { useDispatch } from "react-redux";
 import { onStartSurvey } from "../../redux/slice/formSlice";
+import { useNavigate } from "react-router-dom";
 
 const HomePages = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleStartSurvey = () => {
-    dispatch(onStartSurvey());
+    try {
+      dispatch(onStartSurvey());
+      navigate("/form");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

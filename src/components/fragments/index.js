@@ -1,3 +1,4 @@
 import Button from "./Button";
+import QuestionsForm from "./QuestionsForm";
 
-export { Button };
+export { Button, QuestionsForm };
