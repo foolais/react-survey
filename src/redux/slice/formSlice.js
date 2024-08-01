@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getCurrentTimePlusMinutes } from "../../utils/utils";
 
 const storedData = JSON.parse(localStorage.getItem("surveyForm"));
 const initialData = storedData || [];
@@ -11,11 +12,17 @@ const initialState = {
   timer: initialData?.timer || 10,
 };
 
+const setLocalStorageTimer = () => {
+  const timer = getCurrentTimePlusMinutes(10);
+  localStorage.setItem("timer", timer);
+};
+
 const formSlice = createSlice({
   name: "form",
   initialState,
   reducers: {
     onStartSurvey: (state) => {
+      setLocalStorageTimer();
       state.isOngoingSurvey = true;
       state.isFinishedSurvey = false;
       state.currentQuestion = 0;

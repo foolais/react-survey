@@ -3,12 +3,14 @@ import { Clock10, Info } from "lucide-react";
 import styles from "../styles/QuestionsForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { onChangeAnswer } from "../../../redux/slice/formSlice";
+import { Timer } from "../../fragments";
+import { TriangleAlert } from "lucide-react";
 
 const QuestionsForm = (props) => {
   const { data, type = "form" } = props;
   const dispatch = useDispatch();
 
-  const { surveyAnswers, timer } = useSelector((state) => state.form);
+  const { surveyAnswers } = useSelector((state) => state.form);
 
   const handleSelectedAnswer = (answer) => {
     const selectedAnswer = surveyAnswers?.[data?.id];
@@ -20,17 +22,25 @@ const QuestionsForm = (props) => {
       dispatch(onChangeAnswer({ index: data?.id, answer: answer.value }));
   };
 
+  const isEmptyAnswer = () => {
+    const selectedAnswer = surveyAnswers?.[data?.id];
+    return selectedAnswer === undefined && type === "review";
+  };
+
   return (
     <div
-      className={`${styles.container} ${type === "review" && styles.review}`}
+      className={`${styles.container} ${
+        type === "review" ? styles.review : ""
+      } ${isEmptyAnswer() ? styles.empty : styles.filled}`}
     >
       <div className={styles.header}>
-        <div>
+        <div className={styles.questions}>
+          {isEmptyAnswer && <TriangleAlert size={25} color="#d33" />}
           <p>Question {data?.id + 1} of 10</p>
         </div>
-        <div className={type === "review" && styles.hiddenContent}>
+        <div className={type === "review" ? styles.hiddenContent : ""}>
           <Clock10 size={25} color="darkgrey" />
-          <p>{timer}</p>
+          <Timer redirectUrl="/review" />
         </div>
       </div>
       <div className={styles.content}>

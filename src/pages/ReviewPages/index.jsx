@@ -6,7 +6,11 @@ import { questions } from "../../data/questions";
 import styles from "../styles/ReviewPages.module.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { showConfirmationDialog, warningDialog } from "../../utils/utils";
+import {
+  isEmptyLocalStorage,
+  showConfirmationDialog,
+  warningDialog,
+} from "../../utils/utils";
 import { onStartSurvey } from "../../redux/slice/formSlice";
 import { RotateCcw, Home } from "lucide-react";
 
@@ -20,6 +24,10 @@ const ReviewPages = () => {
   useEffect(() => {
     if (isOngoingSurvey) {
       warningDialog("You haven't finished the survey yet.", () => {
+        navigate("/");
+      });
+    } else if (isEmptyLocalStorage()) {
+      warningDialog("You haven't taken the survey yet.", () => {
         navigate("/");
       });
     }
