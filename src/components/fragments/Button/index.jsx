@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import "../styles/Button.module.css";
+import styles from "../styles/Button.module.css";
 
-const Button = ({ children, ...rest }) => {
+const Button = ({ children, className, ...rest }) => {
   return (
-    <button className="button" {...rest}>
+    <button className={`${styles.button} ${className}`} {...rest}>
       {children}
     </button>
   );

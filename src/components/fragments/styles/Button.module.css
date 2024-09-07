@@ -1,21 +1,21 @@
-button {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+.button {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
   cursor: pointer;
 }
 
-button:hover {
-  background: var(--primary-hover);
+.button {
+  background: var(--primary-hover) !important;
 }
 
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
 }
