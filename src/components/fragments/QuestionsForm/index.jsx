@@ -10,7 +10,9 @@ const QuestionsForm = (props) => {
   const { data, type = "form" } = props;
   const dispatch = useDispatch();
 
-  const { surveyAnswers } = useSelector((state) => state.form);
+  const { surveyAnswers, isFinishedSurvey } = useSelector(
+    (state) => state.form
+  );
 
   const handleSelectedAnswer = (answer) => {
     const selectedAnswer = surveyAnswers?.[data?.id];
@@ -35,7 +37,9 @@ const QuestionsForm = (props) => {
     >
       <div className={styles.header}>
         <div className={styles.questions}>
-          {isEmptyAnswer && <TriangleAlert size={25} color="#d33" />}
+          {isEmptyAnswer() && isFinishedSurvey && (
+            <TriangleAlert size={25} color="#d33" />
+          )}
           <p>Question {data?.id + 1} of 10</p>
         </div>
         <div className={type === "review" ? styles.hiddenContent : ""}>
